@@ -1,0 +1,49 @@
+server:
+  port: 8888
+
+
+# 查看项目中的自动配置报告（可以查看项目的配置类状态，Positive matches，Negative matches，Exclusions，Unconditional classes）
+#debug: true
+
+# 双引号不转义转义，单引号转义转义,如 双引号中的 "\n" 会换行， 二单引号中 '\n' 不会换行，原样输出\n
+
+
+#person:
+#  name: "超测试"
+#  age: 18
+#
+#student:
+#  name: "楠子"
+
+spring:
+  profiles:
+    active: @spring.profiles.active@
+
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+person:
+  name: "this is dev"
+
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: uat
+person:
+  name: "this is uat"
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: pro
+person:
+  name: "this is pro"
